@@ -1,0 +1,80 @@
+:root {
+  font-family: Inter, sans-serif;
+  font-feature-settings: 'liga' 1, 'calt' 1; /* fix for Chrome */
+
+  --padding-xs: 1rem;
+  --padding-s: 3rem;
+  --padding-m: 5rem;
+  --padding-l: 8rem;
+  
+  --inline-padding-header: var(--padding-l);
+
+  --border-radius: 16px;
+  --border-radius-s: 8px;
+
+  @media screen and (max-width: 768px) {
+    --inline-padding-header: var(--padding-m);
+  }
+
+  @media screen and (max-width: 576px) {
+    --inline-padding-header: var(--padding-s);
+  }
+
+  @media screen and (max-width: 380px) {
+    --inline-padding-header: var(--padding-xs);
+  }
+}
+
+@supports (font-variation-settings: normal) {
+  :root { font-family: InterVariable, sans-serif; }
+}
+
+.blurred-card {
+  background: rgba(246, 246, 246, 0.1);
+  border-radius: var(--border-radius);
+  border: 1.5px solid rgba(208, 208, 208, 0.38);
+  box-shadow: rgba(100, 100, 111, 0.2) 0 7px 29px 0;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+.line-label {
+  padding: 0.5rem 0.8rem;
+  border-radius: var(--border-radius);
+  width: max-content;
+  color: #ffffff;
+}
+
+button:not(.blurred-card) {
+  display: inline-block;
+  outline: none;
+  cursor: pointer;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 600;
+  border-radius: 8px;
+  padding: 13px 23px;
+  border: 1px solid #222222;
+  transition: box-shadow 0.2s ease 0s, -ms-transform 0.1s ease 0s, -webkit-transform 0.1s ease 0s, transform 0.1s ease 0s;
+  background: #fff;
+  color: #222222;
+}
+
+button:not(.blurred-card):hover {
+  border-color: #000000;
+  background: #f7f7f7;
+}
+
+button:not(.blurred-card):disabled {
+  color: #797979;
+  border: unset;
+  cursor: default;
+}
+
+button:not(.blurred-card):disabled:hover {
+  background: #fff;
+}
+
+a {
+  color: unset;
+}
