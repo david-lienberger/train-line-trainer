@@ -6,6 +6,7 @@ node_modules
 .output
 .vercel
 /.svelte-kit
+build
 
 # OS
 .DS_Store
